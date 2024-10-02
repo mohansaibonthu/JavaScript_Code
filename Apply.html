@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example 1: Using apply() to pass arguments as an array
+const personApply = {
+  name: 'Mohan',
+  greet: function(greeting, punctuation) {
+    console.log(`${greeting}, I am ${this.name}${punctuation}`);
+  }
+};
+personApply.greet.apply(otherPerson, ['Hi', '!']); // Output: Hi, I am John!
+
+    </script>
+    <script>
+        function greet(greeting) {
+  return greeting + ', ' + this.name + '!';
+}
+
+const person = { name: 'John' };
+
+// Invoking greet() method with person object and arguments array
+const message = greet.apply(person, ['Hello']);
+console.log(message); // Output: Hello, John!
+    </script>
+</body>
+</html>

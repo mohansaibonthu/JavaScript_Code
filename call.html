@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example 1: Using call() to borrow a method
+const person = {
+  name: 'Mohan',
+  greet: function(greeting) {
+    console.log(`${greeting}, I am ${this.name}`);
+  }
+};
+const otherPerson = { name: 'John' };
+person.greet.call(otherPerson, 'Hello'); // Output: Hello, I am John
+
+    </script>
+    <script>
+        // Example 2: Call with multiple arguments
+function introduce(firstName, lastName) {
+  console.log(`My name is ${firstName} ${lastName}.`);
+}
+introduce.call(null, 'Jane', 'Doe'); // Output: My name is Jane Doe.
+
+    </script>
+</body>
+</html>

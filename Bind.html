@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example 1: Using bind() to bind a function to an object
+const personBind = {
+  name: 'Mohan',
+  greet: function() {
+    console.log(`Hello, I am ${this.name}`);
+  }
+};
+const greetJohn = personBind.greet.bind({ name: 'John' });
+greetJohn(); // Output: Hello, I am John
+
+    </script>
+    <script>
+        // Example 2: Partial application with bind
+function multiply(a, b) {
+  return a * b;
+}
+const double = multiply.bind(null, 2); // Pre-bind the first argument to 2
+console.log(double(5)); // Output: 10
+
+    </script>
+</body>
+</html>
